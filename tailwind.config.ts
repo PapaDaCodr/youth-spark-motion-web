@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -18,6 +19,10 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'arvo': ['Arvo', 'serif'],
+				'inter': ['Inter', 'sans-serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -52,16 +57,12 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
-				}
+				// NextGen Youth Movement Brand Colors
+				'electric-blue': '#00D9FF',
+				'neon-green': '#39FF14',
+				'bright-orange': '#FF6B35',
+				'hot-pink': '#FF1493',
+				'electric-purple': '#8A2BE2',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,11 +85,64 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'fade-in': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateY(20px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateY(0)'
+					}
+				},
+				'scale-in': {
+					'0%': {
+						transform: 'scale(0.8)',
+						opacity: '0'
+					},
+					'100%': {
+						transform: 'scale(1)',
+						opacity: '1'
+					}
+				},
+				'glow-pulse': {
+					'0%, 100%': {
+						boxShadow: '0 0 20px rgba(0, 217, 255, 0.3)'
+					},
+					'50%': {
+						boxShadow: '0 0 40px rgba(0, 217, 255, 0.6)'
+					}
+				},
+				'counter-up': {
+					'0%': {
+						transform: 'translateY(100%)',
+						opacity: '0'
+					},
+					'100%': {
+						transform: 'translateY(0)',
+						opacity: '1'
+					}
+				},
+				'ripple': {
+					'0%': {
+						transform: 'scale(0)',
+						opacity: '1'
+					},
+					'100%': {
+						transform: 'scale(2)',
+						opacity: '0'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fade-in 0.6s ease-out',
+				'scale-in': 'scale-in 0.5s ease-out',
+				'glow-pulse': 'glow-pulse 2s ease-in-out infinite',
+				'counter-up': 'counter-up 0.3s ease-out',
+				'ripple': 'ripple 0.6s ease-out',
 			}
 		}
 	},
